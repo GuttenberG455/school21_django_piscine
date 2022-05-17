@@ -23,8 +23,12 @@ def sort_dict():
         'Burton': '1939',
     }
 
-    for key, value in d.items():
-        print(key, value)
+    def use_my_order(dictionary):
+        return dictionary[1], dictionary[0]
+
+    sorted_dict = sorted(d.items(), key=use_my_order)
+    for writer, year in sorted_dict:
+        print(writer)
 
 
 if __name__ == '__main__':
