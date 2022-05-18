@@ -1,10 +1,9 @@
-
 def print_numbers():
     f = open("numbers.txt", 'r')
     for line in f.readlines():
         num_list = line.split(',')
-        for number in num_list:
-            print(number)
+        for num in num_list:
+            print(num)
     f.close()
 
 

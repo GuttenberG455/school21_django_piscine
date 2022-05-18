@@ -1,4 +1,3 @@
-
 def sort_dict():
     d = {
         'Hendrix': '1942',
