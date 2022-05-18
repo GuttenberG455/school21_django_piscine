@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>{title}</title>
+	</head>
+	<body>
+		<h1> {profession}</h1>
+		<h2>Contacts:</h2>
+		<table>
+			<tr>
+				<th>Name</th>
+				<td>{name} {surname}</td>
+			</tr>
+			<tr>
+				<th>Age</th>
+				<td>{age}</td>
+			</tr>
+			<tr>
+				<th>Phone</th>
+				<td>{phone}</td>
+			</tr>
+			<tr>
+				<th>Skype</th>
+				<td>{skype}</td>
+			</tr>
+			<tr>
+				<th>Email</th>
+				<td>{email}</td>
+			</tr>
+		</table>
+	</body>
+</html>
