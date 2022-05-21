@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}
+    Ex01: Template engine.
+{% endblock title %} {% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'ex01/style2.css' %}"/>
+{% endblock style %} {% block content %}
+
+    <div class="content">
+        <h1>Blocks.</h1>
+        {% block block1 %}
+            <p>Block1</p>
+        {% endblock block1 %}
+        {% block block2 %}
+            <p>Block2</p>
+        {% endblock block2 %}
+        <h1>Loopsfor ... in</h1>
+        <ol>
+            {% for river in river_list %}
+                <li>{{ river }}</li>
+            {% endfor %}
+        </ol>
+        <h1>if control structures</h1>
+        {% if variable >= 0 %}
+            <p>there is a variable grater than zero and equals {{ variable }}</p>
+        {% endif %}
+        <h1>The display of the passing context variables.</h1>
+        <p>{{ var1 }}</p>
+        <p>{{ var2 }}</p>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>History form</title>
+</head>
+<body>
+<h2>My history form!</h2>
+<form action="" method="post">
+  {% csrf_token %} {{ form.as_table }}
+  <input type="submit" value="Submit" />
+</form>
+<h2>History data:</h2>
+{% for text in text_list %}
+<p>{{ text }}</p>
+{% endfor %}
+</body>
+</html>
