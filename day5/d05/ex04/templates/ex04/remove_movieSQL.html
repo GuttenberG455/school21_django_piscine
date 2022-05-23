@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remove</title>
+    <style>
+        table, th, td {
+            border: 1px solid;
+            margin: auto;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<form action="" method="POST">
+    {% csrf_token %}
+    <h1>Ex04 (SQL)</h1>
+    <h2>Remove</h2>
+<table>
+<tr>
+    <td>
+
+    {{ form }}
+    <select name="select">
+        {% for movie in movies_list %}
+            <option value="{{ movie.0 }}">{{ movie.1 }}</option>
+        {% endfor %}
+    </select>
+    </td>
+<td>
+    <button type="submit">Remove</button>
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

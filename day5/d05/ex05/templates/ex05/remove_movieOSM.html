@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remove</title>
+    <style>
+        table, th, td {
+            border: 1px solid;
+            margin: auto;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Ex05 (OSM)</h1>
+<h2>Remove</h2>
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>
+                {{ form }}
+                <select name="select">
+                    {% for movie in movies_list %}
+                        <option value="{{ movie.episode_nb }}">{{ movie.title }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </td>
+            <td>
+                <button type="submit">Remove</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
