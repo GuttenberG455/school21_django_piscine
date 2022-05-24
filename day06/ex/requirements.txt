@@ -1,0 +1,5 @@
+asgiref==3.5.2
+django==3.2.13
+sqlparse==0.4.2
+psycopg2-binary==2.9.3
+django-bootstrap3==15.0.0
