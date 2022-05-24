@@ -37,12 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ex00',
-    'ex01',
-    'ex02',
-    'ex03',
-    'ex04',
-    'ex05'
+    'ex00.apps.Ex00Config',
+    'ex01.apps.Ex01Config',
+    'ex02.apps.Ex02Config',
+    'ex03.apps.Ex03Config',
+    'ex04.apps.Ex04Config',
+    'ex05.apps.Ex05Config',
+    'ex06.apps.Ex06Config',
+    'ex07.apps.Ex07Config',
+    'ex08.apps.Ex08Config'
 ]
 
 MIDDLEWARE = [
@@ -61,7 +64,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR / 'templates', BASE_DIR / 'ex02/templates', BASE_DIR / 'ex03/templates',
-                 BASE_DIR / 'ex04/templates', BASE_DIR / 'ex05/templates']
+                 BASE_DIR / 'ex04/templates', BASE_DIR / 'ex05/templates', BASE_DIR / 'ex06/templates',
+                 BASE_DIR / 'ex07/templates', BASE_DIR / 'ex08/templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {

@@ -1,7 +1,7 @@
 import psycopg2
 from django.http import HttpResponse
 from django.shortcuts import render
-
+from .forms import UpdateForm
 
 # Create your views here.
 from d05 import settings
@@ -24,7 +24,7 @@ def init(request):
             opening_crawl TEXT,
             director VARCHAR(32) NOT NULL,
             producer VARCHAR(128) NOT NULL,
-            release_date DATE NOT NULL
+            release_date DATE NOT NULL,
             created TIMESTAMP NOT NULL DEFAULT NOW(),
             updated TIMESTAMP NOT NULL DEFAULT NOW()
             );
@@ -37,7 +37,7 @@ def init(request):
             END;
             $$ language 'plpgsql';
             CREATE TRIGGER update_films_changetimestamp BEFORE UPDATE
-            ON {self.TABLE_NAME} FOR EACH ROW EXECUTE PROCEDURE
+            ON ex06_movies FOR EACH ROW EXECUTE PROCEDURE
             update_changetimestamp_column();
         """)
         conn.commit()
@@ -122,7 +122,7 @@ def populate(request):
         for movie in data:
             try:
                 curs.execute("""
-                            INSERT INTO ex04_movies 
+                            INSERT INTO ex06_movies 
                             (title, episode_nb, opening_crawl,
                              director, producer, release_date) 
                             VALUES (%(title)s, %(episode_nb)s, %(opening_crawl)s, 
@@ -174,5 +174,42 @@ def display(request):
     else:
         return HttpResponse("No data available")
 
+
 def update(request):
-    
+    conn = psycopg2.connect(
+        dbname=settings.DATABASES['default']['NAME'],
+        user=settings.DATABASES['default']['USER'],
+        password=settings.DATABASES['default']['PASSWORD'],
+        host=settings.DATABASES['default']['HOST'],
+        port=settings.DATABASES['default']['PORT'],
+    )
+    cursor = conn.cursor()
+    form = UpdateForm()
+
+    if request.method == 'POST':
+        form = UpdateForm(request.POST)
+        if form.is_valid():
+            try:
+                cursor.execute(f"UPDATE ex06_movies SET opening_crawl = '{request.POST['opening_crawl']}' WHERE episode_nb = {request.POST['select'][0]};")
+                conn.commit()
+            except Exception as e:
+                print(e)
+                conn.rollback()
+    try:
+        cursor.execute("""SELECT 
+            episode_nb,
+            title,
+            opening_crawl,
+            director,
+            producer,
+            release_date
+            from ex06_movies
+            ORDER BY episode_nb
+            """)
+    except Exception as e:
+        return HttpResponse("No data available")
+    movies_list = cursor.fetchall()
+    if movies_list:
+        return render(request, 'ex06/updateSQL.html', locals())
+    else:
+        return HttpResponse("No data available")

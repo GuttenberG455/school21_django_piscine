@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <style>
+        table, th, td {
+            border: 1px solid;
+            margin: auto;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<form action="" method="POST">
+    {% csrf_token %}
+    <h1>Ex07 (OSM)</h1>
+    <h2>Update</h2>
+    <table>
+        <tr>
+            {{ form }}
+        </tr>
+        <tr>
+            <td>
+                <select name="select">
+                    {% for movie in movies_list %}
+                        <option value="{{ movie.episode_nb }}">{{ movie.title }}</option>
+                    {% endfor %}
+                </select>
+            </td>
+            <td>
+                <button type="submit">Update</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

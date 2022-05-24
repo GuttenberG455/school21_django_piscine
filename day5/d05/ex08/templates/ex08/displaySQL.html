@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display</title>
+    <style>
+        table, th, td {
+            border: 1px solid;
+            margin: auto;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Ex08 (SQL)</h1>
+<h2>People from windy planets:</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Home world</th>
+        <th>Climate</th>
+    </tr>
+    {% for human in people_list %}
+        <tr>
+            {% for field in human %}
+                <td>{{ field }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

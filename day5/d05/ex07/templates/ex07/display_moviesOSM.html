@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+    <style>
+        table, th, td {
+            border: 1px solid;
+            margin: auto;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Ex07 (OSM)</h1>
+<h2>Movies:</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Movie title</th>
+        <th>Opening Crawl</th>
+        <th>Director</th>
+        <th>Producer</th>
+        <th>Release Date</th>
+    </tr>
+    {% for movie in movies_list %}
+        <tr>
+            <td>{{ movie.episode_nb }}</td>
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.opening_crawl }}</td>
+            <td>{{ movie.director }}</td>
+            <td>{{ movie.producer }}</td>
+            <td>{{ movie.release_date }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
