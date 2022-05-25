@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Articles{% endblock title %}
+{% block content %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Synopsis</th>
+            <th>Writer</th>
+            <th>Created</th>
+            <th>When</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if news_list %}
+            {% for item in news_list %}
+                <tr>
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.synopsis }}</td>
+                    <td>{{ item.author }}</td>
+                    <td>{{ item.created }}</td>
+                    <td>Непонятно</td>
+                    <td>
+                        <button type="button" class="btn btn-info" onclick="location.href='#'">
+                            Read
+                        </button>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+        </tbody>
+    </table>
+{% endblock content %}

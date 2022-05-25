@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <table class="table table-light border">
+                <tr class="border">
+                    <td class="border w-25">Username</td>
+                    <td>
+                        {{ form.username }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border w-25"><label>Password</label></td>
+                    <td>
+                        {{ form.password1 }}
+                        <div class="text" style="font-size: 10pt">Пароль должен содержать от 8 до 20 символов</div>
+                        <div class="text-danger form-text has-feedback" style="display: none" id="password_error1">Your
+                            password doesn't pass the requirements
+                        </div>
+                        <p>Your password can’t be too similar to your other personal information.</p>
+                        <p>Your password must contain at least 8 characters.</p>
+                        <p>Your password can’t be a commonly used password.</p>
+                        <p>Your password can’t be entirely numeric.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border w-25">Repeat Password:</td>
+                    <td>
+                        {{ form.password2 }}
+                        <div class="text-danger form-text has-feedback" style="display:none;" id="password_error2">Your
+                            repeated passwort is not equal to your password.
+                        </div>
+                    </td>
+                </tr>
+                <tr id="reg_submit_tag">
+                    <td class="border" colspan="2">
+                        <input type="submit" class="button btn-primary" value="Sign Up">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+{% endblock content %}
