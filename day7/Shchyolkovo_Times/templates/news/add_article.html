@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Publish{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <table class="table table-light border">
+                <tr class="border">
+                    <td class="border w-25">Title</td>
+                    <td>
+                        {{ form.title }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border w-25">Synopsis</td>
+                    <td>
+                        {{ form.synopsis }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border w-25">Content of article:</td>
+                    <td>
+                        {{ form.content }}
+                    </td>
+                </tr>
+                <tr id="reg_submit_tag">
+                    <td class="border" colspan="2">
+                        <button type="button" class="btn btn-primary"
+                                onclick="history.back()">Back
+                        </button>
+                        <button type="submit" class="btn btn-success" value="Publish">Publish</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+{% endblock content %}

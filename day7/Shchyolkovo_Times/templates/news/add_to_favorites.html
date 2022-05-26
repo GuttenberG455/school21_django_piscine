@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Adding to favorites{% endblock title %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-10">
+            {% if is_added %}
+                <table class="table">
+                    <tr>
+                        <div class="alert alert-success">
+                            <strong>Success!</strong> Article {{ article }} was added to your favourites
+                        </div>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="button" class="btn-info"
+                                    onclick="location.href='{% url "render_detail" id_article %}'">Go back
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            {% endif %}
+            {% if is_in_favorites %}
+                <div class="alert alert-info">
+                    <strong>Error!</strong> This article is already in your favorites
+                </div>
+                <button type="button" class="btn-info" onclick="location.href='{% url "render_detail" id_article %}'">Go
+                    back
+                </button>
+            {% endif %}
+        </div>
+        <div class="col-sm-1">
+        </div>
+    </div>
+{% endblock content %}

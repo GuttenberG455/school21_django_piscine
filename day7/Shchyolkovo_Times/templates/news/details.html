@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %} {{ article.title }} {% endblock title %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-6">
+            <table class="table">
+                <tr>
+                    <th>{{ article.title }}</th>
+                </tr>
+                <tr>
+                    <td> {{ article.synopsis }}</td>
+                </tr>
+                <tr>
+                    <td> {{ article.content }}</td>
+                </tr>
+                <tr>
+                    <td> Created: {{ article.created }} by {{ article.author }}</td>
+                </tr>
+            </table>
+            <button type="button" class="btn btn-primary"
+                    onclick="history.back()">Back
+            </button>
+            {% if request.user.id != None %}
+            <button type="button" class="btn btn-info"
+                    onclick="location.href='{% url "add_to_favourite" id_article %}'">Add to favourites
+            </button>
+            {% endif %}
+        </div>
+    </div>
+    <div class="col-sm-3">
+    </div>
+{% endblock content %}
