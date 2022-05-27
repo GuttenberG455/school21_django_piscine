@@ -8,25 +8,25 @@ A two weeks long intensive course covering topics from Python Basics (variable t
 * ### Day 00: Web basics (6/6 ✅)
 Introducing to Web: HTML (elemetns, attributes, forms), CSS, W3C validations
 * ### Day 01: Python Basics (8/8 ✅)
-Python: variable types, 
-* ### Day 02: IO and Files (1/3 ❌)
-Collections, File Streams (input/output)
-* ### Day 03: Threads (3/4 ✅)
-Basic multithreading mechanisms: Thread, Runnable, Synchronized
-* ### Day 04: JAR (3/3 ✅)
-Creation library archives and use external libraries (JCommander and JCDP)
-* ### Day 05: SQL and JDBC (3/5 ✅)
-Maven, Databases: PostgreSQL (pgAdmin), SQL, JDBC, HikariCP
-* ### Day 06: JUnit and Mockito (3/4 ✅)
-Testing: JUnit
-* ### Day 07: Reflection(0/3 ❌)
-Java Reflection API, Annotations, ORM
-* ### Day 08: Spring (2/3 ✅)
-Basics of the Spring framework: beans, XML, context, AnnotationConfig
-* ### Day 09: Sockets (1/3 ❌)
-Client/server application: Java-Sockets API
+Python: variable types, file operations, parsing information
+* ### Day 02: Python Classes (6/7 ✅)
+Python: classes, OOP
+* ### Day 03: Libraries (4/6 ✅)
+Python libraries: libraries connections, Wikipedia API
+* ### Day 04: Django basics (4/4 ✅)
+Virtual environments, templates, 
+* ### Day 05: SQL and Django ORM (9/11 ✅)
+Databases, PostgreSQL, Django Models, Migrations
+* ### Day 06: Django (1/7 ❌)
+Tips application: Models, Forms, Views
+* ### Day 07: Django(5/7 ✅)
+News application: Models, Views, Forms, registration and authentication, Bootstrap
+* ### Day 08: Spring (0/5 ❌)
+Server configuration: Nginx, uWSGI
+* ### Day 09: Sockets (0/5 ❌)
+AJAX, Websockets
 
 ---
 ## Rushes (group projects) 
-* ### Rush 00: Console Game and Maven (❌)
-* ### Rush 01: Java FX and Sockets(❌)
+* ### Rush 00: Little solo game with a web interface (❌)
+* ### Rush 01: Forum with messenger system(❌)
