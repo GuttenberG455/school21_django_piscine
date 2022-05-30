@@ -19,9 +19,9 @@ Virtual environments, templates,
 Databases, PostgreSQL, Django Models, Migrations
 * ### Day 06: Django (1/7 ❌)
 Tips application: Models, Forms, Views
-* ### Day 07: Django(5/7 ✅)
+* ### Day 07: Django (5/7 ✅)
 News application: Models, Views, Forms, registration and authentication, Bootstrap
-* ### Day 08: Spring (0/5 ❌)
+* ### Day 08: Server configuration (0/5 ❌)
 Server configuration: Nginx, uWSGI
 * ### Day 09: Sockets (0/5 ❌)
 AJAX, Websockets
@@ -29,4 +29,4 @@ AJAX, Websockets
 ---
 ## Rushes (group projects) 
 * ### Rush 00: Little solo game with a web interface (❌)
-* ### Rush 01: Forum with messenger system(❌)
+* ### Rush 01: Forum with messenger system (❌)
